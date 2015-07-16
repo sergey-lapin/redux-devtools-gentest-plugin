@@ -28,9 +28,7 @@ npm start
 open http://localhost:3000
 ```
 
-check out todomvc/tests/generatedTests.js
-
-this is exported tests
+check out exported tests here todomvc/tests/generatedTests.js
 
 you can run it with
 
