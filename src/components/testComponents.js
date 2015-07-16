@@ -28,8 +28,7 @@ export class Expect extends PureComponent {
 
 export class It extends PureComponent {
     render() {
-        var computedStateNextId = <span>check computedState_{this.props.action.type}_{this.props.index}
-            evaluation</span>;
+        var computedStateNextId = <span>check computedState_{this.props.action.type}_{this.props.index} evaluation</span>;
         return (
             <span>
 

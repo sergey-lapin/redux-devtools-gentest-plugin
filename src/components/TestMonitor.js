@@ -6,15 +6,17 @@ import PureComponent from 'react-pure-render/component';
 import R from 'ramda';
 
 export default class TestMonitor extends PureComponent {
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            describeText : ''
+            describeText: ''
         }
     }
-    onDescribeNewText(text){
-        this.setState({describeText:text})
+
+    onDescribeNewText(text) {
+        this.setState({describeText: text})
     }
+
     render() {
         const { stagedActions, computedStates }= this.props;
 
@@ -45,6 +47,7 @@ export default class TestMonitor extends PureComponent {
             <div>
                 <Describe onNewText={this.onDescribeNewText.bind(this)} items={items}/>
                 <br/>
+
                 <div>
                     <p>Click the button to copy some text</p>
                     <ReactZeroClipboard text={this.state.describeText}>
