@@ -28,7 +28,8 @@ export class Expect extends PureComponent {
 
 export class It extends PureComponent {
     render() {
-        var computedStateNextId = <span>check computedState_{this.props.index} evaluation</span>;
+        var computedStateNextId = <span>check computedState_{this.props.action.type}_{this.props.index}
+            evaluation</span>;
         return (
             <span>
 
@@ -58,14 +59,20 @@ export class Describe extends PureComponent {
         return (
 
 
-            <span>
-                import chai from "chai";
-                <br/>
-                import reducer from "../reducerForTests";
-                <br/>
-                const expect = chai.expect;
-                <br/>
 
+            <span>
+                   import chai from "chai";
+                <br/>
+                   import <Begin/> combineReducers <End/> from 'redux';
+                <br/>
+                   import * as reducers from '../reducers';
+                <br/>
+                <br/>
+                   const reducer = combineReducers(reducers);
+                <br/>
+                   const expect = chai.expect;
+                <br/>
+                <br/>
                          describe('handleActions', () => <Begin/>
                      <br/>
                     <br/>
