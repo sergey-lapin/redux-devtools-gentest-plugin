@@ -10,7 +10,23 @@ npm i redux-devtools-gentest-plugin --save-dev
 ```
 ### Usage
 
+To use it with redux-devtools in your project you only need to add  
+```
+  import {TestMonitor} from 'redux-devtools-gentest-plugin';
+  ...
+   <DebugPanel top left bottom>
+        <DevTools store={store}
+                    monitor={TestMonitor}/>
+    </DebugPanel>
+```
+(look at */todomvc/containers/App.js file)
+
 to export tests click **Copy To Buffer** button in the end of left panel.
+
+generated tests are a little bit specific for now they look for reducers in upper directory
+```
+import * as reducers from '../reducers';
+```
 
 ### Running Examples
 
