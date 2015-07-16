@@ -7,6 +7,10 @@ redux-devtools-gentest-plugin
 
 npm i redux-devtools-gentest-plugin --save-dev
 
+### Usage
+
+to export tests click **Copy To Buffer** button in the end of left panel.
+
 ### Running Examples
 
 You can do this:
@@ -23,8 +27,6 @@ npm install
 npm start
 open http://localhost:3000
 ```
-
-to export tests click **Copy To Buffer** button in the end of left panel.
 
 check out todomvc/tests/generatedTests.js
 
