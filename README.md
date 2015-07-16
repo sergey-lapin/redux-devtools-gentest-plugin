@@ -1,7 +1,7 @@
 redux-devtools-gentest-plugin
 =========================
 
-<img src='http://dl2.joxi.net/drive/0010/3977/692105/150716/e0cccc4099.png' width='700'>
+<img src='http://joxi.ru/nAy89v5unJxL2Z.png' width='700'>
 
 ### Installation
 
