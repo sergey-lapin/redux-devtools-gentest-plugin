@@ -4,6 +4,8 @@ redux-devtools-gentest-plugin
 
 <img src='http://dl1.joxi.net/drive/0010/3977/692105/150716/d25467a266.png' width='700'>
 
+### [DEMO)[http://lapanoid.github.io/redux-devtools-gentest-plugin]
+
 ### Installation
 ```
 npm i redux-devtools-gentest-plugin --save-dev
