@@ -1,17 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 import { Begin, End } from './jsHelpers';
 import { Describe } from './testComponents';
+import ReactZeroClipboard  from 'react-zeroclipboard';
+import PureComponent from 'react-pure-render/component';
 import R from 'ramda';
 
-function copyToClipboard(text) {
-    window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
-}
-
-export default class TestMonitor extends Component {
-    onClick() {
-        this.refs.describe.getText(copyToClipboard);
+export default class TestMonitor extends PureComponent {
+    constructor(){
+        super();
+        this.state = {
+            describeText : ''
+        }
     }
-
+    onDescribeNewText(text){
+        this.setState({describeText:text})
+    }
     render() {
         const { stagedActions, computedStates }= this.props;
 
@@ -38,12 +41,14 @@ export default class TestMonitor extends Component {
 
         return (
             <div>
-                <Describe ref="describe" items={items}/>
+                <Describe onNewText={this.onDescribeNewText.bind(this)} items={items}/>
                 <br/>
-                <span onClick={this.onClick.bind(this)}
-                      style={{ textDecoration: 'underline', cursor: 'hand' }}>
-                    Copy to Buffer
-                </span>
+                <div>
+                    <p>Click the button to copy some text</p>
+                    <ReactZeroClipboard text={this.state.describeText}>
+                        <button style={{ textDecoration: 'underline', cursor: 'hand' }}>Copy to Buffer</button>
+                    </ReactZeroClipboard>
+                </div>
             </div>
         );
     }
