@@ -17,9 +17,23 @@ cd redux-devtools
 npm install
 
 cd examples/counter
+OR
+cd examples/todomvc
 npm install
 npm start
 open http://localhost:3000
+```
+
+to export tests click **Copy To Buffer** button in the end of left panel.
+
+check out todomvc/tests/generatedTests.js
+
+this is exported tests
+
+you can run it with
+
+```
+mocha --compilers js:babel/register generatedTests.js
 ```
 
 ### License
