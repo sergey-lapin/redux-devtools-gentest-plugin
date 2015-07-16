@@ -36,11 +36,13 @@
   "devDependencies": {
     "babel-core": "^5.6.18",
     "babel-loader": "^5.1.4",
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5",
     "node-libs-browser": "^0.5.2",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^1.2.7",
-    "style-loader": "^0.12.3",
     "redux-devtools": "^0.1.1",
+    "style-loader": "^0.12.3",
     "todomvc-app-css": "^2.0.1",
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.9.0"

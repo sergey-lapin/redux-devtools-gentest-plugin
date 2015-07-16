@@ -27,14 +27,16 @@ export default class TestMonitor extends PureComponent {
                             type: '@@INIT'
                         },
                         curState: {},
-                        nextState: computedStates[index]
+                        nextState: computedStates[0].state,
+                        index: index
                     }
                 }
 
                 return {
-                    action: stagedActions[index - 1],
-                    curState: computedStates[index - 1],
-                    nextState: computedStates[index]
+                    index: index,
+                    action: stagedActions[index],
+                    curState: computedStates[index - 1].state,
+                    nextState: computedStates[index].state
                 }
             },
             countOfActionsAndStores);

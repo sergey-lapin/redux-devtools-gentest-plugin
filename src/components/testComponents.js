@@ -15,9 +15,11 @@ export class Expect extends PureComponent {
                     <br/>
                     const action = {action};
                     <br/>
-                    const computedState = {stateNextId};
+                    const nextState = {stateNextId};
                     <br/>
-                    expect(reducer(curState, action)).to.deep.equal(computedState);
+                    const computedNextState = reducer(curState, action);
+                    <br/>
+                    expect(computedNextState).to.deep.equal(nextState);
                 <br/>
             </span>
         );
@@ -26,7 +28,7 @@ export class Expect extends PureComponent {
 
 export class It extends PureComponent {
     render() {
-        var computedStateNextId = <span>check computedState_{this.props.id} evaluation</span>;
+        var computedStateNextId = <span>check computedState_{this.props.index} evaluation</span>;
         return (
             <span>
 
@@ -51,9 +53,19 @@ export class Describe extends PureComponent {
 
 
     render() {
+
         const its = R.map((item)=> <span><It {...item}/><br/><br/></span>)(this.props.items);
         return (
-            <span class="generated_tests_code">
+
+
+            <span>
+                import chai from "chai";
+                <br/>
+                import reducer from "../reducerForTests";
+                <br/>
+                const expect = chai.expect;
+                <br/>
+
                          describe('handleActions', () => <Begin/>
                      <br/>
                     <br/>
