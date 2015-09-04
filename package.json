@@ -45,13 +45,13 @@
     "rimraf": "^2.3.4"
   },
   "peerDependencies": {
-    "redux": "^1.0.0 || 1.0.0-rc"
+    "redux": "^2.0.0"
   },
   "dependencies": {
     "jquery": "^2.1.4",
     "ramda": "^0.16.0",
     "react-pure-render": "^1.0.2",
-    "react-redux": "^0.2.2",
+    "react-redux": "^2.0.0",
     "react-zeroclipboard": "^1.1.0",
     "redux": "^1.0.0-rc"
   }
