@@ -46,13 +46,13 @@
     "semantic-release": "4.3.5"
   },
   "peerDependencies": {
-    "redux": "^3.0.0"
+    "redux": "^3.0.0",
+    "react-redux": "3.0.1"
   },
   "dependencies": {
     "jquery": "2.1.4",
     "ramda": "0.16.0",
     "react-pure-render": "1.0.2",
-    "react-redux": "3.0.1",
     "react-zeroclipboard": "1.1.0"
   }
 }
