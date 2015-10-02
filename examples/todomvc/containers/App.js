@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Content, TestMonitor} from '../../../src';
+import {Content, TestMonitor} from '../../../lib';
 import TodoApp from './TodoApp';
 import { createStore, combineReducers, compose } from 'redux';
 import { devTools, persistState } from 'redux-devtools';
@@ -9,9 +9,8 @@ import * as reducers from '../reducers';
 
 const finalCreateStore = compose(
   devTools(),
-  persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
-  createStore
-);
+  persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/))
+)(createStore);
 
 const reducer = combineReducers(reducers);
 const store = finalCreateStore(reducer);
@@ -28,10 +27,12 @@ export default class App extends Component {
                     monitor={LogMonitor} />
         </DebugPanel>
         <DebugPanel top left bottom>
-          <DevTools store={store}
-                    monitor={TestMonitor}/>
+        <DevTools store={store}
+                  monitor={TestMonitor}/>
         </DebugPanel>
       </div>
     );
   }
 }
+
+
