@@ -18,11 +18,13 @@ export default class TestMonitor extends PureComponent {
   }
 
   render() {
-    const { stagedActions, computedStates }= this.props;
+    const {
+      stagedActionIds,
+      actionsById,
+      computedStates
+    } = this.props;
 
-    const countOfActionsAndStores = R.range(0, stagedActions.length);
-
-    const items = R.map((index)=> {
+    const items = R.map((index) => {
         if (index === 0) {
           return {
             action: {
@@ -36,30 +38,32 @@ export default class TestMonitor extends PureComponent {
 
         return {
           index: index,
-          action: stagedActions[index],
+          action: actionsById[index].action,
           curState: computedStates[index - 1].state,
           nextState: computedStates[index].state
         }
       },
-      countOfActionsAndStores);
+      stagedActionIds);
 
     return (
       <div style={{
-    position: 'relative',
-    overflowY: 'hidden',
-    width: '100%',
-    height: '100%',
-    minWidth: 300,
-    backgroundColor: '#2A2F3A'}}>
-        <div style={{position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    overflowX: 'hidden',
-    overflowY: 'auto'}}>
+        position: 'relative',
+        overflowY: 'hidden',
+        width: '100%',
+        height: '100%',
+        color: '#eee',
+        backgroundColor: '#2A2F3A'
+      }}>
+        <div style={{
+          padding: '20px',
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          bottom: 0,
+          overflowX: 'hidden',
+          overflowY: 'auto'
+        }}>
           <Describe onNewText={this.onDescribeNewText.bind(this)} items={items}/>
-          <br/>
-
           <div>
             <p>Click the button to copy some text</p>
             <ReactZeroClipboard text={this.state.describeText}>
