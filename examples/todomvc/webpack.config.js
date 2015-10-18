@@ -14,14 +14,18 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     alias: {
+      'redux-devtools-gentest-plugin/lib': path.join(__dirname, '..', '..', 'src'),
+      'redux-devtools-gentest-plugin': path.join(__dirname, '..', '..', 'src'),
       'react': path.join(__dirname, 'node_modules', 'react')
     },
     extensions: ['', '.js']
+  },
+  resolveLoader: {
+    'fallback': path.join(__dirname, 'node_modules')
   },
   module: {
     loaders: [{
@@ -31,7 +35,7 @@ module.exports = {
       include: __dirname
     }, {
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['react-hot', 'babel'],
       include: path.join(__dirname, '..', '..', 'src')
     }, {
       test: /\.css?$/,
