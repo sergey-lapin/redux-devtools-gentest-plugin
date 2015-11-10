@@ -62,12 +62,7 @@ export class Describe extends PureComponent {
             <span>
                    import chai from "chai";
                 <br/>
-                   import <Begin/> combineReducers <End/> from 'redux';
-                <br/>
-                   import * as reducers from '../reducers';
-                <br/>
-                <br/>
-                   const reducer = combineReducers(reducers);
+                   import reducer from '../reducers';
                 <br/>
                    const expect = chai.expect;
                 <br/>

@@ -1,14 +1,13 @@
-import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Header from '../components/Header';
 import MainSection from '../components/MainSection';
-import * as TodoActions from '../actions/todos';
+import * as TodoActions from '../actions/TodoActions';
 
-class App extends Component {
+class TodoApp extends Component {
   render() {
-    const { todos, dispatch } = this.props;
-    const actions = bindActionCreators(TodoActions, dispatch);
+    const { todos, actions } = this.props;
 
     return (
       <div>
@@ -19,15 +18,16 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  todos: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired
-};
-
-function mapStateToProps(state) {
+function mapState(state) {
   return {
     todos: state.todos
   };
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatch(dispatch) {
+  return {
+    actions: bindActionCreators(TodoActions, dispatch)
+  };
+}
+
+export default connect(mapState, mapDispatch)(TodoApp);
