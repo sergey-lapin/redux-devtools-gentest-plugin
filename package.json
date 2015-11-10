@@ -1,4 +1,5 @@
 {
+  "version":"2.0.0-rc", 
   "name": "redux-devtools-gentest-plugin",
   "description": "Generate mocha like tests from redux-devtools session",
   "main": "lib/index.js",
@@ -47,12 +48,12 @@
   },
   "peerDependencies": {
     "redux": "^3.0.0",
-    "react-redux": "^3.0.1"
+    "react-redux": "^4.0.0"
   },
   "dependencies": {
     "jquery": "2.1.4",
     "ramda": "0.18.0",
     "react-pure-render": "1.0.2",
-    "react-zeroclipboard": "2.0.2"
+    "react-zeroclipboard": "3.0.0"
   }
 }
