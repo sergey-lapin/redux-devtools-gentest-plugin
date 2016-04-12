@@ -47,7 +47,7 @@
   },
   "peerDependencies": {
     "redux": "^3.0.0",
-    "react-redux": "^3.0.1"
+    "react-redux": "^4.4.4"
   },
   "dependencies": {
     "jquery": "2.1.4",
