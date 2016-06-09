@@ -50,7 +50,7 @@
     "react-redux": "^3.0.1"
   },
   "dependencies": {
-    "jquery": "2.1.4",
+    "jquery": "3.0.0",
     "ramda": "0.18.0",
     "react-pure-render": "1.0.2",
     "react-zeroclipboard": "2.0.2"
