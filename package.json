@@ -43,7 +43,7 @@
     "isparta": "3.5.3",
     "mocha": "2.3.3",
     "rimraf": "2.4.4",
-    "semantic-release": "4.3.5"
+    "semantic-release": "6.3.2"
   },
   "peerDependencies": {
     "redux": "^3.0.0",
